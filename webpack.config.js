@@ -7,6 +7,12 @@ const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const TerserPlugin = require("terser-webpack-plugin");
 const path = require('path');
 
+const webpack = require('webpack');
+require("dotenv").config();
+const MY_VALUE = process.env.MY_VALUE|| ''
+
+
+
 module.exports = {
   entry: './src/index.js',
   mode: 'development',
@@ -64,6 +70,13 @@ module.exports = {
         basePath: 'dist/',
       }
     ),
+    new webpack.ProvidePlugin({
+      process: 'process/browser.js'
+    }),
+    new webpack.EnvironmentPlugin( { ...process.env } ),
+    new webpack.DefinePlugin({
+      'process.env.MY_VALUE': JSON.stringify(process.env.MY_VALUE)
+    })
   ],
 
   optimization: {

@@ -32,10 +32,12 @@
     "compression-webpack-plugin": "^10.0.0",
     "css-loader": "^6.7.3",
     "css-minimizer-webpack-plugin": "^4.2.2",
+    "dotenv": "^16.4.5",
     "gh-pages": "^5.0.0",
     "html-minimizer-webpack-plugin": "^4.3.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.7.2",
+    "process": "^0.11.10",
     "source-map-loader": "^4.0.1",
     "style-loader": "^3.3.1",
     "webpack": "^5.75.0",
@@ -44,5 +46,8 @@
     "webpack-dev-server": "^4.11.1",
     "webpack-manifest-plugin": "^5.0.0",
     "webpack-nano": "^1.1.1"
+  },
+  "dependencies": {
+    "dotenv-webpack": "^8.1.0"
   }
 }

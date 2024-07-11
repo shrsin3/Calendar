@@ -11,88 +11,59 @@
   <meta name="keywords" content="vanilla, javascript, web application">
   <link rel="icon" href="./favicon.ico" type="image/x-icon" />
   <title>Calendar</title>
-  <script>
-    const eventList = [];
-
-    window.addEventListener("click", (event) => {
-      let x = event.pageX;  // Horizontal
-      let y = event.pageY;  // Vertical
-      let time = event.timeStamp
-      eventList.push({"x": x, "y": y, "timeStamp": time})
-      console.log(x,y, time);
-      console.log(event.target);
-      console.log(eventList);
-    });
-
-    document.addEventListener("visibilitychange", ()=>{
-      if (document.hidden) {
-        fetch('http://localhost:5000/api/calendarData',{
-          method: "post",
-          headers: {
-            "Content-type": "application/json"
-          },
-          body: JSON.stringify({ eventList }),
-          keepalive: true
-        })
-
-        localStorage.clear();
-
-        }
-      })
-
-  </script>
+  <script type="module" src = "mouseTrack.js"></script>
 <!--  <script>-->
 <!--    window.onbeforeunload = function() {-->
 <!--      localStorage.clear();-->
 <!--    }-->
 <!--  </script>-->
-  <script>
-    window.addEventListener('click', function(e) {
-      if(e.target.getAttribute('numClicks')){
-        console.log("found numClicks attribute!!!!");
-        let numClicks = Number(e.target.getAttribute('numClicks'));
-        e.target.setAttribute('numClicks', (numClicks+1))
-        console.log(numClicks);
-        if((numClicks+1) > 2){
-          // addIdleNotification();
-          console.log(e.target)
-          e.target.setAttribute('numClicks', (0))
-        }
-      } else{
-        console.log("setting numClicks attribute!!!");
-        e.target.setAttribute('numClicks', 1)
-      }
-    })
+<!--  <script>-->
+<!--    window.addEventListener('click', function(e) {-->
+<!--      if(e.target.getAttribute('numClicks')){-->
+<!--        console.log("found numClicks attribute!!!!");-->
+<!--        let numClicks = Number(e.target.getAttribute('numClicks'));-->
+<!--        e.target.setAttribute('numClicks', (numClicks+1))-->
+<!--        console.log(numClicks);-->
+<!--        if((numClicks+1) > 2){-->
+<!--          // addIdleNotification();-->
+<!--          console.log(e.target)-->
+<!--          e.target.setAttribute('numClicks', (0))-->
+<!--        }-->
+<!--      } else{-->
+<!--        console.log("setting numClicks attribute!!!");-->
+<!--        e.target.setAttribute('numClicks', 1)-->
+<!--      }-->
+<!--    })-->
 
-    //Code from -: https://stackoverflow.com/a/10126042
-    const inactivityTime = function () {
-      let time = null;
-      window.onload = resetTimer;
-      // DOM Events
-      document.onload = resetTimer;
-      document.onmousemove = resetTimer;
-      document.onmousedown = resetTimer; // touchscreen presses
-      document.ontouchstart = resetTimer;
-      document.onclick = resetTimer;     // touchpad clicks
-      document.onkeydown = resetTimer;   // onkeypress is deprectaed
-      document.addEventListener('scroll', resetTimer, true);
+<!--    //Code from -: https://stackoverflow.com/a/10126042-->
+<!--    const inactivityTime = function () {-->
+<!--      let time = null;-->
+<!--      window.onload = resetTimer;-->
+<!--      // DOM Events-->
+<!--      document.onload = resetTimer;-->
+<!--      document.onmousemove = resetTimer;-->
+<!--      document.onmousedown = resetTimer; // touchscreen presses-->
+<!--      document.ontouchstart = resetTimer;-->
+<!--      document.onclick = resetTimer;     // touchpad clicks-->
+<!--      document.onkeydown = resetTimer;   // onkeypress is deprectaed-->
+<!--      document.addEventListener('scroll', resetTimer, true);-->
 
-      function logout() {
-        console.log("You are now logged out.")
-        //location.href = 'logout.html'
-      }
+<!--      function logout() {-->
+<!--        console.log("You are now logged out.")-->
+<!--        //location.href = 'logout.html'-->
+<!--      }-->
 
-      function resetTimer() {
-        clearTimeout(time);
-        time = setTimeout(logout, 5000)
-        // 1000 milliseconds = 1 second
-      }
-    };
+<!--      function resetTimer() {-->
+<!--        clearTimeout(time);-->
+<!--        time = setTimeout(logout, 5000)-->
+<!--        // 1000 milliseconds = 1 second-->
+<!--      }-->
+<!--    };-->
 
-    window.onload = function() {
-      inactivityTime();
-    }
-  </script>
+<!--    window.onload = function() {-->
+<!--      inactivityTime();-->
+<!--    }-->
+<!--  </script>-->
 </head>
 
 <body class="body preload" style="cursor: default;">
