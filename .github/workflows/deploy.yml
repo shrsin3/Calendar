@@ -38,7 +38,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           name: 'github-pages'
-          path: build
+          path: './dist'
 
       # deploy the react app to github pages
       - name: Deploy
