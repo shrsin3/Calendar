@@ -16,8 +16,6 @@ window.addEventListener("click", (event) => {
     console.log(x,y, time);
     console.log(event.target);
     console.log(eventList);
-    const myValue = process.env.MY_VALUE
-    console.log(myValue)
 });
 
 document.addEventListener("visibilitychange", ()=>{

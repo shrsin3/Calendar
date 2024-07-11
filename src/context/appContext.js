@@ -53,7 +53,7 @@ const labels = locales.labels;
 class Context {
   constructor () {
     this.colorScheme = "dark";
-    this.component = "month";
+    this.component = "list";
     this.sidebarState = "hide";
     this.date = new Date();
     this.gmt = new Date().getTimezoneOffset() / 60;
@@ -108,7 +108,7 @@ class Context {
 
     if (localStorage.getItem("component") === null) {
       if (this.component === undefined) {
-        this.component = "month";
+        this.component = "list";
       }
       Context.setLocalComponent(this.component);
     }
