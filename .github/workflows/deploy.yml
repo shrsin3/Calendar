@@ -33,6 +33,7 @@ jobs:
       - name: Build
         env:
           MY_VALUE: ${{ secrets.MY_VALUE }}
+          MY_CONSTANT: ${{ secrets.MY_CONSTANT }}
         run: npm run build
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3

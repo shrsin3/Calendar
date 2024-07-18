@@ -48,6 +48,9 @@
     "webpack-nano": "^1.1.1"
   },
   "dependencies": {
-    "dotenv-webpack": "^8.1.0"
+    "aws-sdk": "^2.1659.0",
+    "dotenv-webpack": "^8.1.0",
+    "get-xpath": "^3.1.0",
+    "mouselog": "^0.5.0"
   }
 }
