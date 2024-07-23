@@ -32,13 +32,13 @@ window.addEventListener("mouseup", (event) => {
 });
 
 
-window.addEventListener("mouseenter", (event) => {
-    pushToEventList(event)
-});
-
-window.addEventListener("mouseleave", (event) => {
-    pushToEventList(event)
-});
+// window.addEventListener("mouseenter", (event) => {
+//     pushToEventList(event)
+// });
+//
+// window.addEventListener("mouseleave", (event) => {
+//     pushToEventList(event)
+// });
 
 window.addEventListener("keydown", (event) => {
     pushToEventList(event)
@@ -54,7 +54,7 @@ window.addEventListener("mousemove", (event) => {
     getMouseMoveData(event)
 });
 
-setInterval(pushMouseMoveData, 1000);
+setInterval(pushMouseMoveData, 500);
 
 function pushToEventList(event){
     let x = event.pageX;  // Horizontal
