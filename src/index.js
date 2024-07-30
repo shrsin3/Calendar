@@ -44,6 +44,8 @@ import "./styles/aside/shortcuts.css";
 
 import "./mouseTrack"
 
+import "./TaskSteps.pdf"
+
 /*!*************************************!*/
 setAppDefaults(context, store);
 renderViews(context, datepickerContext, store);

@@ -356,3 +356,97 @@ svg {
   align-items: center;
 
 }
+
+#help-document{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  /*transform: translate(-50%, -50%);*/
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  z-index: 10000; /* Make sure it covers all content */
+  justify-content: center;
+}
+
+#doc-toolbar{
+  position: relative;
+  justify-content: center; /* Center iframe horizontally */
+  align-items: center;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  width: 100%;
+}
+
+#doc-source{
+  display: flex;
+  justify-content: center; /* Center iframe horizontally */
+  align-items: center;
+  position: relative;
+}
+
+
+#help-document-toolbar{
+  display: flex;
+  background-color: #8B44A2;
+  position: relative;
+  margin: 0px auto;
+  padding: 1%;
+  /*justify-content: center; !* Center iframe horizontally *!*/
+  /*align-items: center;*/
+  width: 80%;
+}
+
+#save-button{
+  /*margin-right: 20px;*/
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-right: 2rem;
+}
+
+
+#header{
+  background-color: #FFEBB2;
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 8px;
+}
+
+#save-data {
+  background-color: #8B44A2;
+  color: white;
+  font-weight: bold;
+  border-radius: var(--borderradius);
+  font-size: 14px;
+  height: 32px;
+  overflow: hidden;
+  padding: 0px 8px;
+  width: auto;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+#get-help {
+  background-color: #8B44A2;
+  color: white;
+  font-weight: bold;
+  border-radius: var(--borderradius);
+  font-size: 14px;
+  height: 32px;
+  overflow: hidden;
+  padding: 0px 8px;
+  width: auto;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+#task-heading{
+  color: #8B44A2;
+  font-weight: bold;
+}
+

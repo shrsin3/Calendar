@@ -1,8 +1,9 @@
 .sidebar {
   position: fixed;
+  margin-top: 2%;
   left: 0;
   height: calc(100% - 60px);
-  top: 60px;
+  top: 134px;
   width: 248px;
   background: var(--black1);
   display: flex;

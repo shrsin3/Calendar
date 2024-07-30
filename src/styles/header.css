@@ -7,6 +7,7 @@
   display: flex;
   align-items: center;
   z-index: 197;
+  /*margin-top: 2%;*/
 }
 
 .h__container {
@@ -313,18 +314,7 @@
   position: relative
 }
 
-#save-data {
-  background-color: darkorange;
-  border-radius: var(--borderradius);
-  font-size: 14px;
-  height: 32px;
-  overflow: hidden;
-  padding: 0 8px;
-  width: auto;
-  cursor: pointer;
-  white-space: nowrap;
-  margin: 0 16px 0 12px;
-}
+
 
 .select__modal {
   -webkit-appearance: none;

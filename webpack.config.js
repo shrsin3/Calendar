@@ -46,6 +46,17 @@ module.exports = {
         test: /\.(ico|png|svg|webp|)$/i,
         type: 'asset/resource',
       },
+      {
+        test: /\.(pdf|gif|png|jpe?g|svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]'
+            }
+          }
+        ]
+      }
     ],
   },
 
