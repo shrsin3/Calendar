@@ -432,8 +432,8 @@ svg {
 }
 
 #get-help {
-  background-color: #8B44A2;
-  color: white;
+  /*background-color: #8B44A2;*/
+  /*color: white;*/
   font-weight: bold;
   border-radius: var(--borderradius);
   font-size: 14px;
@@ -441,7 +441,7 @@ svg {
   overflow: hidden;
   padding: 0px 8px;
   width: auto;
-  cursor: pointer;
+  /*cursor: pointer;*/
   white-space: nowrap;
 }
 
