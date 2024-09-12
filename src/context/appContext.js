@@ -53,8 +53,8 @@ const labels = locales.labels;
 class Context {
   constructor () {
     this.colorScheme = "light";
-    this.component = "list";
-    this.sidebarState = "hide";
+    this.component = "month";
+    this.sidebarState = "open";
     this.date = new Date();
     this.gmt = new Date().getTimezoneOffset() / 60;
 
