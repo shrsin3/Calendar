@@ -1,37 +1,65 @@
 
-let helpButtonWait = 60
+let helpButtonWait = 300
 let startTime = new Date().getTime();
 let remainingTime;
 
-// const helpTimer = setInterval(handleHelpTimer, 1000);
+const helpTimer = setInterval(handleHelpTimer, 1000);
 
-function handleHelpTimer(){
-    helpButtonWait = helpButtonWait-1;
-    // console.log("Help Timer Called")
-    if(helpButtonWait > 9){
-        let helpButton = document.getElementById("get-help")
-        helpButton.innerHTML = "Get help in 00:"+ helpButtonWait;
-        helpButton.disabled = true;
-        helpButton.style.backgroundColor = "#808080"
-        helpButton.style.color = "white"
-    } else if(helpButtonWait !== 0){
-        let helpButton = document.getElementById("get-help")
-        helpButton.innerHTML = "Get help in 00:0"+ helpButtonWait;
-        helpButton.disabled = true;
-        helpButton.style.backgroundColor = "#808080"
-        helpButton.style.color = "white"
-    }else {
-            let helpButton = document.getElementById("get-help")
-            helpButton.innerHTML = "Help";
-            helpButton.disabled = false;
-            clearInterval(helpTimer);
-            helpButton.style.backgroundColor = "#8B44A2"
-            helpButton.style.color = "white"
-            helpButton.style.cursor = "pointer"
-        }
-    // console.log(helpButtonWait)
+// Code inspired from -;
+// https://www.tutorialspoint.com/how-to-convert-javascript-seconds-to-minutes-and-seconds
+async function handleHelpTimer() {
+    helpButtonWait = helpButtonWait - 1;
+    let helpButton = document.getElementById("get-help")
+    let minutes = Math.floor(helpButtonWait / 60);
+    let extraSeconds = helpButtonWait % 60;
+    if (minutes < 10) {
+        minutes = "0" + minutes
+    }
 
+    if (extraSeconds < 10) {
+        extraSeconds = "0" + extraSeconds
+    }
+    helpButton.disabled = true;
+    helpButton.innerHTML = minutes + ":" + extraSeconds
+    helpButton.style.backgroundColor = "#808080"
+    helpButton.style.color = "white"
+
+    if (helpButtonWait === 0) {
+        clearInterval(helpTimer);
+        await savingData();
+        return;
+    }
+
+    console.log(helpButtonWait)
 }
+
+// function handleHelpTimer(){
+//     helpButtonWait = helpButtonWait-1;
+//     // console.log("Help Timer Called")
+//     if(helpButtonWait > 9){
+//         let helpButton = document.getElementById("get-help")
+//         helpButton.innerHTML = "Get help in 00:"+ helpButtonWait;
+//         helpButton.disabled = true;
+//         helpButton.style.backgroundColor = "#808080"
+//         helpButton.style.color = "white"
+//     } else if(helpButtonWait !== 0){
+//         let helpButton = document.getElementById("get-help")
+//         helpButton.innerHTML = "Get help in 00:0"+ helpButtonWait;
+//         helpButton.disabled = true;
+//         helpButton.style.backgroundColor = "#808080"
+//         helpButton.style.color = "white"
+//     }else {
+//             let helpButton = document.getElementById("get-help")
+//             helpButton.innerHTML = "Help";
+//             helpButton.disabled = false;
+//             clearInterval(helpTimer);
+//             helpButton.style.backgroundColor = "#8B44A2"
+//             helpButton.style.color = "white"
+//             helpButton.style.cursor = "pointer"
+//         }
+//     // console.log(helpButtonWait)
+//
+// }
 // document.getElementById('get-help').addEventListener('click', ()=>{
 //     let pauseTime = new Date().getTime();
 //     console.log(pauseTime - startTime);
@@ -51,9 +79,9 @@ function handleHelpTimer(){
 //
 //
 // })
-let automaticSave = setTimeout(async () => {
-    await savingData();
-}, 300000);
+// let automaticSave = setTimeout(async () => {
+//     await savingData();
+// }, 300000);
 
 let date = new Date();
 date = date.toLocaleString("en-CA", {
