@@ -1,9 +1,19 @@
 
-let helpButtonWait = 300
+let helpButton = document.getElementById("get-help")
+let helpTimer;
+
+helpButton.display = "none"
+
+setTimeout(async () => {
+    helpButton.display = "block"
+    helpTimer = setInterval(handleHelpTimer, 1000);
+}, 240000);
+
+let helpButtonWait = 60
 let startTime = new Date().getTime();
 let remainingTime;
 
-const helpTimer = setInterval(handleHelpTimer, 1000);
+// const helpTimer = setInterval(handleHelpTimer, 1000);
 
 // Code inspired from -;
 // https://www.tutorialspoint.com/how-to-convert-javascript-seconds-to-minutes-and-seconds
@@ -25,12 +35,13 @@ async function handleHelpTimer() {
     helpButton.style.color = "white"
 
     if (helpButtonWait === 0) {
+        helpButton.innerHTML = "00:00"
         clearInterval(helpTimer);
         await savingData();
         return;
     }
 
-    console.log(helpButtonWait)
+    // console.log(helpButtonWait)
 }
 
 // function handleHelpTimer(){
@@ -281,7 +292,11 @@ function getXPath(node){
     }
 
     var old = '/' + node.tagName;
-    var new_path = this.xpath(node.parentNode) + old;
+    try{
+        var new_path = getXPath(node.parentNode) + old;
+    } catch (e){
+        var new_path = '' + old;
+    }
 
     return new_path;
 }
